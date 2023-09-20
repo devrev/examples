@@ -31,7 +31,7 @@ from a department to become a culture.
 1. **Clone the Repository**:
 
    ```shell
-   git clone https://github.com/devrev-examples/devrev-code-examples.git
+   git clone git@github.com:devrev/examples.git
    ```
 
 2. **Explore the Code**: Browse through the directories and choose the example that suits your needs. 🚀

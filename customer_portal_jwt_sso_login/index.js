@@ -9,7 +9,6 @@ const clickButton = async () => {
       Accept: "application/json",
       "Content-Type": "application/json",
       Authorization: AAT,
-      Host: "localhost:4100",
     },
     body: JSON.stringify({
       grant_type: "urn:ietf:params:oauth:grant-type:token-exchange",
@@ -20,7 +19,7 @@ const clickButton = async () => {
         user_ref: "<user-ref>", // Unique identifier of the user on the IDP.
         org_ref: "shipsy.com", // External reference of the rev org of the user.
         user_traits: {
-          email: "john.smith@shipsy.com", // Email ID of the user.
+          email: "john.smith@some-email.com", // Email ID of the user.
         },
       },
     }),
