@@ -29,6 +29,9 @@ policies across their applications on DevRev.
    this format for the URL:
    `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>`
 
+6. **Custom Redirects**: The above redirection URL will take the user to the default landing page of your customer portal. If you need custom redirection, use the `redirect_to` param. This param accepts a relative path after your slug and will redirect the user to the specified path post login. 
+Example: `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>&redirect_to=/article/ART-1` will login the user and redirect them to  `http://support.devrev.ai/<your-org-slug>/article/ART-1` post login.
+
 ## The Onetime Token 🛡️
 
 In our commitment to security and user protection, we use the one-time token to address the potential security risks associated with JWT-based authentications openly exposed in URLs. Some of the critical security concerns we aim to mitigate include:
