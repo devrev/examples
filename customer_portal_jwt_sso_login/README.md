@@ -32,7 +32,7 @@ policies across their applications on DevRev.
 6. **Custom Redirects**: The above redirection URL will take the user to the default landing page of your customer portal. If you need custom redirection, use the `redirect_to` param. This param accepts a relative path after your slug and will redirect the user to the specified path post login.
    Example: `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>&redirect_to=/article/ART-1` will login the user and redirect them to `http://support.devrev.ai/<your-org-slug>/article/ART-1` post login.
 
-7. **Preferred UI Locale**: To render the customer portal in a specific language for the user, use the `ui_locales` param. This param accepts a single locale tag in [BCP-47](https://www.rfc-editor.org/info/bcp47) format (e.g., `en-US`, `fr-FR`, `ja-JP`, `pt-BR`, `zh-Hans`) and sets the portal's UI language for the session initiated by this SSO redirect.
+7. **Preferred UI Locale**: To render the customer portal in a specific language for the user, use the `ui_locales` param. This param accepts a single locale tag in [BCP-47](https://www.rfc-editor.org/info/bcp47) format (e.g., `en-US`, `fr-FR`, `ja-JP`, `pt-BR`) and sets the portal's UI language for the session initiated by this SSO redirect.
 
    Example: `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>&ui_locales=fr-FR` will log the user in and render the customer portal in French.
 
