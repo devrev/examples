@@ -29,8 +29,23 @@ policies across their applications on DevRev.
    this format for the URL:
    `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>`
 
-6. **Custom Redirects**: The above redirection URL will take the user to the default landing page of your customer portal. If you need custom redirection, use the `redirect_to` param. This param accepts a relative path after your slug and will redirect the user to the specified path post login. 
-Example: `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>&redirect_to=/article/ART-1` will login the user and redirect them to  `http://support.devrev.ai/<your-org-slug>/article/ART-1` post login.
+6. **Custom Redirects**: The above redirection URL will take the user to the default landing page of your customer portal. If you need custom redirection, use the `redirect_to` param. This param accepts a relative path after your slug and will redirect the user to the specified path post login.
+   Example: `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>&redirect_to=/article/ART-1` will login the user and redirect them to `http://support.devrev.ai/<your-org-slug>/article/ART-1` post login.
+
+7. **Preferred UI Locale**: To render the customer portal in a specific language for the user, use the `ui_locales` param. This param accepts a single locale tag in [BCP-47](https://www.rfc-editor.org/info/bcp47) format (e.g., `en-US`, `fr-FR`, `ja-JP`, `pt-BR`, `zh-Hans`) and sets the portal's UI language for the session initiated by this SSO redirect.
+
+   Example: `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>&ui_locales=fr-FR` will log the user in and render the customer portal in French.
+
+   `ui_locales` can be combined with `redirect_to`, for example:
+   `http://support.devrev.ai/<your-org-slug>/callback/sso?jwt=<onetime-token>&redirect_to=/article/ART-1&ui_locales=ja-JP`
+
+    > **Note:** Before the portal can honor a locale passed via `ui_locales`, it must be enabled in two places:
+    >
+    > 1. **Add the language** to your portal's supported languages from **Settings → Language and Region → Portal Supported Languages**.
+    >
+    > 2. **Publish the language** from **Portal Settings**.
+    >
+    > Until both steps are completed, the locale will be ignored and the portal will fall back to the default locale configured in portal settings. The same applies to any unsupported or malformed BCP-47 tag.
 
 ## The Onetime Token 🛡️
 
